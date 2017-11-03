@@ -158,7 +158,9 @@ static inline CGFloat LengthOfVector(CGVector vector) {
     shapeLayer.anchorPoint = AnchorPointFromPosition(CenterOfFrame(initialSourceFrameInMask),
                                                      maskedView.layer.bounds);
     shapeLayer.frame = maskedView.layer.bounds;
-    shapeLayer.path = [[UIBezierPath bezierPathWithOvalInRect:initialSourceFrameInMask] CGPath];
+    //将点击按钮展示效果蒙版改为方形
+    // shapeLayer.path = [[UIBezierPath bezierPathWithOvalInRect:initialSourceFrameInMask] CGPath];
+    shapeLayer.path = [[UIBezierPath bezierPathWithRect:initialSourceFrameInMask] CGPath];
   }
   maskedView.layer.mask = shapeLayer;
 
